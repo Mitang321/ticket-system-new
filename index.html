@@ -1,35 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Customer Support Ticketing System - Version 3</title>
+    <title>Customer Support Ticketing System </title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Customer Support Ticketing System</h1>
-
-    <section id="ticket-form">
-      <h2>Submit a Ticket</h2>
-      <form id="submit-ticket-form">
-        <label for="ticket-title">Title:</label>
-        <input type="text" id="ticket-title" required />
-        <label for="ticket-description">Description:</label>
-        <textarea id="ticket-description" required></textarea>
-        <label for="ticket-priority">Priority:</label>
-        <select id="ticket-priority" required>
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
-        </select>
-        <button type="submit">Submit Ticket</button>
+	@@ -26,11 +26,39 @@ <h2>Submit a Ticket</h2>
       </form>
+    </section>
+
+    <section id="filter-section">
+      <h2>Filter Tickets</h2>
+      <label for="filter-priority">Priority:</label>
+      <select id="filter-priority">
+        <option value="">All</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <label for="filter-status">Status:</label>
+      <select id="filter-status">
+        <option value="">All</option>
+        <option value="New">New</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Resolved">Resolved</option>
+      </select>
+      <button id="apply-filters">Apply Filters</button>
     </section>
 
     <section id="ticket-list">
       <h2>Submitted Tickets</h2>
       <ul id="tickets"></ul>
     </section>
+
+    <div id="ticket-details" class="hidden">
+      <h2>Ticket Details</h2>
+      <p id="details-title"></p>
+      <p id="details-description"></p>
+      <p id="details-priority"></p>
+      <p id="details-status"></p>
+      <button id="close-details">Close</button>
+    </div>
 
     <script src="script.js"></script>
   </body>
